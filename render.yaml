@@ -1,4 +1,6 @@
+# render.yaml
 services:
+  # Backend - API
   - type: web
     name: ambiance-api
     runtime: node
@@ -16,9 +18,12 @@ services:
       - key: CORS_ORIGINS
         value: https://ambiance-frontend.onrender.com
 
-  - name: ambiance-frontend
+  # Frontend - Static Site
+  - type: static
+    name: ambiance-frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
+    publish: ./dist
+    plan: free
     envVars:
       - key: VITE_API_URL
         value: https://ambiance-api.onrender.com
