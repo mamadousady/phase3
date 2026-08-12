@@ -1,11 +1,15 @@
-# render.yaml - Version fonctionnelle pour Render
+# render.yaml
 services:
-  # Backend - API
+  # Backend - API (le serveur est dans Backends/)
   - type: web
     name: ambiance-api
     runtime: node
-    buildCommand: npm install
-    startCommand: node server.js
+    buildCommand: |
+      cd Backends
+      npm install
+    startCommand: |
+      cd Backends
+      node server.js
     healthCheckPath: /
     plan: free
     envVars:
@@ -18,12 +22,17 @@ services:
       - key: CORS_ORIGINS
         value: https://ambiance-frontend.onrender.com
 
-  # Frontend - Static Site
+  # Frontend - React
   - type: web
     name: ambiance-frontend
     runtime: node
-    buildCommand: npm install && npm run build
-    startCommand: npx serve -s dist -l $PORT
+    buildCommand: |
+      cd frontend
+      npm install
+      npm run build
+    startCommand: |
+      cd frontend
+      npx serve -s dist -l $PORT
     plan: free
     envVars:
       - key: VITE_API_URL
