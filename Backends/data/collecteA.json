@@ -1,0 +1,42 @@
+{
+    "lieu":{
+        "nom":"Café Central",
+        "adresse":"123 Rue Sainte-Catherine",
+        "latitude":45.0517,
+        "longitude":-73.5673,
+        "type":"Café"
+    },
+    "observations":[
+        {
+    "valeur": 45,
+      "unite": "dB",
+      "date": "2026-06-29T09:00:00.000Z",
+      "notes": "Matinée calme, quelques clients",
+      "contexte": "Heure de pointe matinale modérée"
+        },
+
+       {
+        "valeur": 52,
+      "unite": "dB",
+      "date": "2026-06-29T11:00:00.000Z",
+      "notes": "Affluence moyenne, conversation animées",
+      "contexte": "Avant-midi,période active"
+       },
+       {
+        "valeur": 48,
+      "unite": "dB",
+      "date": "2026-06-30T14:00:00.000Z",
+      "notes": "Aprés-midi, calme relatif",
+      "contexte": "Période creuse de l'aprés-midi"
+       },
+       {
+        "valeur": 55,
+      "unite": "dB",
+      "date": "2026-06-30T16:00:00.000Z",
+      "notes": "Début du soirée,animation croissante",
+      "contexte": "Fin d'aprés-midi,retour des clients"
+       }
+    ]
+
+    
+}

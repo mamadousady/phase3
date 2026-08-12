@@ -1,0 +1,38 @@
+.badge-classification{
+    display: inline-flex;
+    align-items:center;
+    gap: 0.25rem;
+   padding: 0.25rem 0.75rem;
+   border-radius: 9999px;
+   font-weight: 500;
+   font-size: 0.875rem;
+   transition: all 0.2s;
+
+}
+.badge-classification:hover{
+    transform:scale(1.05);
+}
+
+.badge-classification.calme{
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
+.badge-classification.modéré{
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+}
+
+.badge-classification.animé{
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.badge-classification.inconnu{
+    background-color: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+}

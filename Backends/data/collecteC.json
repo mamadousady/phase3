@@ -1,0 +1,38 @@
+{
+    "lieu":{
+        "nom": "Parc La Fontaine",
+        "adresse": "789 Rue Rachel, Montréal",
+        "latitude": 45.5298,
+        "longitude": -73.5702,
+        "type": "parc"
+    },
+    "observations":[{
+        "valeur": 38,
+        "unite": "dB",
+        "date": "2026-06-29T08:00:00.000Z",
+        "notes": "Matin calme, promeneurs",
+        "contexte": "Matinée en semaine"
+
+    },
+{
+    "valeur": 42,
+    "unite": "dB",
+    "date": "2026-06-29T17:00:00.000Z",
+    "notes": "Activité modérée, familles",
+    "contexte": "Fin d'après-midi en semaine"
+},
+{
+    "valeur":35,
+    "unite":"dB",
+    "date":"2026-06-30T13:00:00.000Z",
+    "notes":"Pique-nique, enfants jouent",
+    "contexte":"Après-midi de week-end"
+},
+{
+    "valeur":60,
+    "unite":"dB",
+    "date":"2026-06-30T15:00:00.000Z",
+    "notes":"Animation intense, événement local",
+    "contexte":"Week-end, période animée"
+}]
+}

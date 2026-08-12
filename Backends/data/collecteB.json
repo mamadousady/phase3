@@ -1,0 +1,38 @@
+{
+    "lieu":{
+        "nom":"Bibliothéque Municipale",
+        "adresse":"456 rue Sherbrooke,Montréal",
+        "latitude":45.5081,
+        "longitude":-73.5618,
+        "type":"bibliotheque"
+    },
+    "observations":[{
+        "valeur":30,
+        "unite":"dB",
+       "date": "2026-06-29T10:00:00.000Z",
+      "notes": "Silence absolu, quelques étudiants",
+      "contexte": "Matinée en semaine"
+
+    },
+{
+    "valeur": 32,
+    "unite": "dB",
+    "date": "2026-06-29T14:00:00.000Z",
+    "notes": "Légère activité, chuchotements",
+    "contexte": "Après-midi en semaine"
+},
+{
+    "valeur": 28,
+    "unite": "dB",
+    "date": "2026-06-30T11:00:00.000Z",
+    "notes": "Très calme, peu de visiteurs",
+    "contexte": "Matinée de week-end"
+},
+{
+    "valeur": 35,
+    "unite": "dB",
+    "date": "2026-06-30T15:00:00.000Z",
+    "notes": "Activité modérée, groupe d'étudiants",
+    "contexte": "Après-midi de week-end"
+}]
+}
