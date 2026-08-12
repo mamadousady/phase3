@@ -1,4 +1,4 @@
-# render.yaml
+# render.yaml - Version fonctionnelle pour Render
 services:
   # Backend - API
   - type: web
@@ -19,10 +19,11 @@ services:
         value: https://ambiance-frontend.onrender.com
 
   # Frontend - Static Site
-  - type: static
+  - type: web
     name: ambiance-frontend
+    runtime: node
     buildCommand: npm install && npm run build
-    publish: ./dist
+    startCommand: npx serve -s dist -l $PORT
     plan: free
     envVars:
       - key: VITE_API_URL
