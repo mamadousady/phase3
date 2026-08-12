@@ -16,7 +16,7 @@ services:
       - key: CORS_ORIGINS
         value: https://ambiance-frontend.onrender.com
 
-  - type: static
+  - type: web
     name: ambiance-frontend
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
