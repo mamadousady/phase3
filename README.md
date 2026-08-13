@@ -96,5 +96,80 @@ Time:        5.079 s
 |GET|/mes-observations|Obtenir mes observations|protégé|
 |GET|/favoris/:lieuId|Ajouter un favori|protégé|
 
+##  Déploiement
 
+### Production URLs
+
+| Service | URL |
+|---------|-----|
+| **Backend API** | `https://ambiance-api-g97s.onrender.com` |
+| **Frontend** | `https://ambiance-frontend.onrender.com` |
+
+### Liens utiles
+- [Application en ligne](https://ambiance-frontend.onrender.com)
+- [API Documentation](https://ambiance-api-g97s.onrender.com)
+
+### Variables d'environnement
+
+#### Backend (`ambiance-api`)
+| Variable | Description |
+|----------|-------------|
+| `MONGODB_URI` | Chaîne de connexion MongoDB Atlas |
+| `JWT_SECRET` | Clé secrète pour les tokens JWT |
+| `NODE_ENV` | `production` |
+| `CORS_ORIGINS` | `https://ambiance-frontend.onrender.com` |
+
+#### Frontend (`ambiance-frontend`)
+| Variable | Description |
+|----------|-------------|
+| `VITE_API_URL` | `https://ambiance-api-g97s.onrender.com` |
+
+### Déploiement sur Render
+
+L'application est déployée sur Render avec la configuration suivante :
+
+1. **Backend** : Web Service Node.js
+2. **Frontend** : Web Service avec serveur statique (npx serve)
+
+#### Fichier `render.yaml`
+
+```yaml
+services:
+  # Backend - API (le serveur est dans Backends/)
+  - type: web
+    name: ambiance-api
+    runtime: node
+    buildCommand: |
+      cd Backends
+      npm install
+    startCommand: |
+      cd Backends
+      node server.js
+    healthCheckPath: /
+    plan: free
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGINS
+        value: https://ambiance-frontend.onrender.com
+
+  # Frontend - React
+  - type: web
+    name: ambiance-frontend
+    runtime: node
+    buildCommand: |
+      cd frontend
+      npm install
+      npm run build
+    startCommand: |
+      cd frontend
+      npx serve -s dist -l $PORT
+    plan: free
+    envVars:
+      - key: VITE_API_URL
+        value: https://ambiance-api.onrender.com
 
