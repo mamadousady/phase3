@@ -63,6 +63,7 @@ npm install
 node server.js
 npm install
 cd mon-projet2 # dans un autre terminal
+npm audit fix. # En cas de problème
 npm run dev 
 cp .env.example .env
 VITE_API_URL= 'http://localhost:3000'
